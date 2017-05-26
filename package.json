@@ -1,0 +1,14 @@
+{
+  "name": "hovercastle",
+  "version": "1.0.0",
+  "description": "A selfbot for Discord written in node.js",
+  "main": "bot.js",
+  "repository": "https://github.com/neurotech/hovercastle",
+  "author": "Tim Douglas <neurotech@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "moment": "^2.18.1",
+    "semistandard": "^11.0.0"
+  }
+}

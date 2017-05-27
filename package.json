@@ -7,7 +7,7 @@
   "author": "Tim Douglas <neurotech@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "forever --minUptime 5000 --spinSleepTime 5000 start bot.js"
+    "start": "pm2 start bot.js --name='hovercastle'"
   },
   "dependencies": {
     "dateformat": "2.0.0",
@@ -17,6 +17,6 @@
     "semistandard": "11.0.0"
   },
   "devDependencies": {
-    "forever": "0.15.3"
+    "pm2": "^2.4.6"
   }
 }

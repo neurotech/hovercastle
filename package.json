@@ -6,9 +6,17 @@
   "repository": "https://github.com/neurotech/hovercastle",
   "author": "Tim Douglas <neurotech@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "forever --minUptime 5000 --spinSleepTime 5000 start bot.js"
+  },
   "dependencies": {
-    "discord.js": "^11.1.0",
-    "moment": "^2.18.1",
-    "semistandard": "^11.0.0"
+    "dateformat": "2.0.0",
+    "discord.js": "11.1.0",
+    "log-symbols": "1.0.2",
+    "moment": "2.18.1",
+    "semistandard": "11.0.0"
+  },
+  "devDependencies": {
+    "forever": "0.15.3"
   }
 }

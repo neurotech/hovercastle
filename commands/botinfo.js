@@ -20,7 +20,7 @@ module.exports = (bot, message) => {
         { name: 'Node Version', value: `\`${process.version}\``, inline: true },
         { name: 'Discord.js Version', value: `\`${Discord.version}\``, inline: true },
         { name: 'Bot Version', value: `\`v${details.version}\``, inline: true },
-        { name: 'Process Uptime', value: `\`${moment.duration(uptime, 'D [days], H [hrs], m [mins], s [secs]')}\``, inline: true },
+        { name: 'Process Uptime', value: `\`${moment.duration(uptime).humanize()}\``, inline: true },
         { name: 'Memory Use', value: `\`${memUsed.toFixed(2)}/${memTotal.toFixed(2)}MB\``, inline: true },
         { name: 'Heartbeat Ping', value: `\`${Math.floor(bot.ping)}ms\``, inline: true }
       ]

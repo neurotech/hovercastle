@@ -7,7 +7,6 @@ module.exports = (bot, message) => {
   let memory = process.memoryUsage();
   let memTotal = memory.heapTotal / 1024 / 1024;
   let memUsed = memory.heapUsed / 1024 / 1024;
-  let uptime = process.uptime() * 1000;
   message.edit({
     embed: {
       author: {
@@ -20,7 +19,7 @@ module.exports = (bot, message) => {
         { name: 'Node Version', value: `\`${process.version}\``, inline: true },
         { name: 'Discord.js Version', value: `\`${Discord.version}\``, inline: true },
         { name: 'Bot Version', value: `\`v${details.version}\``, inline: true },
-        { name: 'Process Uptime', value: `\`${moment.duration(uptime).humanize()}\``, inline: true },
+        { name: 'Process Uptime', value: `\`${moment.duration(process.uptime() * 1000).format('D [days], H [hrs], m [mins], s [secs]')}\``, inline: true },
         { name: 'Memory Use', value: `\`${memUsed.toFixed(2)}/${memTotal.toFixed(2)}MB\``, inline: true },
         { name: 'Heartbeat Ping', value: `\`${Math.floor(bot.ping)}ms\``, inline: true }
       ]

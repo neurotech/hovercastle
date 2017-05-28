@@ -1,6 +1,7 @@
-const fs = require('fs');
+const symbols = require('log-symbols');
+const dateFormat = require('dateformat');
 
-let pixel = './images/overwatch/pixel'
+let pixel = './images/overwatch/pixel';
 let heroes = [
   'ana',
   'bastion',
@@ -30,7 +31,14 @@ let heroes = [
 module.exports = (message) => {
   if (message.content.toLowerCase().startsWith('/overwatch pixel')) {
     let chunked = message.content.split(' ');
-    let hero = chunked[2];
-    console.log(hero);
+    let hero = heroes.find(h => h.startsWith(chunked[2]));
+    if (hero) {
+      var image = `${pixel}/${hero}.png`;
+      message.channel.send({ files: [ image ] })
+        .then(() => message.delete());
+    } else {
+      message.delete();
+      return console.log(symbols.error, ` [${dateFormat()}] Could not find pixel art of Overwatch hero: '${chunked[2]}'. (Command called was: "${message.content}")`);
+    }
   }
 };

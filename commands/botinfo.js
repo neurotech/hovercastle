@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const config = require('../config');
 const details = require('../package.json');
+require('moment-duration-format');
 
 module.exports = (bot, message) => {
   let memory = process.memoryUsage();

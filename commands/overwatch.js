@@ -30,7 +30,6 @@ let heroes = [
 module.exports = (message) => {
   if (message.content.toLowerCase().startsWith('/overwatch pixel')) {
     let chunked = message.content.split(' ');
-    let hero = chunked[2];
-    console.log(hero);
+    console.log(chunked);
   }
 };
